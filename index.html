@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="./src/style.css">
+  </head>
+  <body>
+    
+        <header>
+                <form class="form">
+                  <input class="input-city" type="text" name="query" placeholder="Search city..." />
+                  <button type="submit" class="form-btn"><img src="/search.svg" width="15" height="15" alt="search"></button>
+                </form>
+                <button type="button" id="location" class="location">
+                    <img src="/location.svg" alt="geo">
+                </button>
+           </header>
+    <main>
+        <div class="container">
+            <!-- <div class="city">
+                <ul class="items">
+                    <li class="city-name">City from input</li>
+                    <li class="data">16/08/2025</li>
+                </ul>
+            </div>
+            <div class="wrapper">
+                <div class="description">
+                    <img class="temp-img" src="/rain.png" alt="rain">
+                    <p class="temperature">23<span>&deg;</span></p>
+                    <p class="weather">cloudy</p>
+                </div>
+    
+                <ul class="grid">
+                    <li class="grid-name">
+                        <img class="grid-img" src="/humidity.svg" alt="humidity" width="24" height="24">
+                        <p class="value">20<span>%</span>/p>
+                        <p class="value-name">Humidity</p>
+                    </li>
+                    <li class="grid-name">
+                        <img class="grid-img" src="/pressure.svg" alt="pressure" width="24" height="24">
+                        <p class="value">740<span>h/Pa</span></p>
+                        <p class="value-name">Pressure</p>
+                    </li>
+                    <li class="grid-name">
+                        <img class="grid-img" src="/wind.svg" alt="pressure" width="24" height="24">
+                        <p class="value">9<span>km/h</span>/p>
+                        <p class="value-name">Wind Speed</p>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="count">5-Day Forecasts</p>
+
+            <ul class="week">
+                <li class="day">
+                    <p>Mn</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23<span>&deg;</span></p>
+                </li>
+                <li class="day">
+                    <p>Thu</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23<span>&deg;</span></p>
+                </li>
+                <li class="day">
+                    <p>Wed</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23<span>&deg;</span></p>
+                </li>
+                <li class="day">
+                    <p>Fr</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23<span>&deg;</span></p>
+                </li>
+                <li class="day">
+                    <p>Su</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23 <span>&deg;</span></p>
+                </li>
+            </ul>
+     -->
+        </div>
+    </main>
+
+    <footer>
+        <p class="created">&copy; 2025 Created by Olena Sorokina</p>
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
