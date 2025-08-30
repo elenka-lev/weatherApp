@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <script type="module" crossorigin src="/weatherApp/assets/index-BySo_V4K.js"></script>
+    <link rel="stylesheet" crossorigin href="/weatherApp/assets/index-DfPXXDDj.css">
+  </head>
+  <body>
+    
+        <header>
+                <form class="form">
+                  <input class="input-city" type="text" name="query" placeholder="Search city..." />
+                  <button type="submit" class="form-btn"><img src="data:image/svg+xml,%3csvg%20width='16'%20height='16'%20viewBox='0%200%2016%2016'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M6.3125%200.625C7.82092%200.625%209.26756%201.22422%2010.3342%202.29083C11.4008%203.35744%2012%204.80408%2012%206.3125C12%207.72125%2011.4837%209.01625%2010.635%2010.0138L10.8713%2010.25H11.5625L15.9375%2014.625L14.625%2015.9375L10.25%2011.5625V10.8713L10.0138%2010.635C9.01625%2011.4837%207.72125%2012%206.3125%2012C4.80408%2012%203.35744%2011.4008%202.29083%2010.3342C1.22422%209.26756%200.625%207.82092%200.625%206.3125C0.625%204.80408%201.22422%203.35744%202.29083%202.29083C3.35744%201.22422%204.80408%200.625%206.3125%200.625ZM6.3125%202.375C4.125%202.375%202.375%204.125%202.375%206.3125C2.375%208.5%204.125%2010.25%206.3125%2010.25C8.5%2010.25%2010.25%208.5%2010.25%206.3125C10.25%204.125%208.5%202.375%206.3125%202.375Z'%20fill='white'/%3e%3c/svg%3e" width="15" height="15" alt="search"></button>
+                </form>
+                <button type="button" id="location" class="location">
+                    <img src="data:image/svg+xml,%3csvg%20width='22'%20height='22'%20viewBox='0%200%2022%2022'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_0_179)'%3e%3cpath%20d='M11%201.83333C7.45248%201.83333%204.58331%204.7025%204.58331%208.25C4.58331%2013.0625%2011%2020.1667%2011%2020.1667C11%2020.1667%2017.4166%2013.0625%2017.4166%208.25C17.4166%204.7025%2014.5475%201.83333%2011%201.83333ZM6.41665%208.25C6.41665%205.72%208.46998%203.66666%2011%203.66666C13.53%203.66666%2015.5833%205.72%2015.5833%208.25C15.5833%2010.89%2012.9433%2014.8408%2011%2017.3067C9.09331%2014.8592%206.41665%2010.8625%206.41665%208.25Z'%20fill='white'/%3e%3cpath%20d='M11%2010.5417C12.2656%2010.5417%2013.2916%209.51565%2013.2916%208.24999C13.2916%206.98434%2012.2656%205.95833%2011%205.95833C9.73433%205.95833%208.70831%206.98434%208.70831%208.24999C8.70831%209.51565%209.73433%2010.5417%2011%2010.5417Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_0_179'%3e%3crect%20width='22'%20height='22'%20fill='white'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e" alt="geo">
+                </button>
+           </header>
+    <main>
+        <div class="container">
+            <!-- <div class="city">
+                <ul class="items">
+                    <li class="city-name">City from input</li>
+                    <li class="data">16/08/2025</li>
+                </ul>
+            </div>
+            <div class="wrapper">
+                <div class="description">
+                    <img class="temp-img" src="/rain.png" alt="rain">
+                    <p class="temperature">23<span>&deg;</span></p>
+                    <p class="weather">cloudy</p>
+                </div>
+    
+                <ul class="grid">
+                    <li class="grid-name">
+                        <img class="grid-img" src="/humidity.svg" alt="humidity" width="24" height="24">
+                        <p class="value">20<span>%</span>/p>
+                        <p class="value-name">Humidity</p>
+                    </li>
+                    <li class="grid-name">
+                        <img class="grid-img" src="/pressure.svg" alt="pressure" width="24" height="24">
+                        <p class="value">740<span>h/Pa</span></p>
+                        <p class="value-name">Pressure</p>
+                    </li>
+                    <li class="grid-name">
+                        <img class="grid-img" src="/wind.svg" alt="pressure" width="24" height="24">
+                        <p class="value">9<span>km/h</span>/p>
+                        <p class="value-name">Wind Speed</p>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="count">5-Day Forecasts</p>
+
+            <ul class="week">
+                <li class="day">
+                    <p>Mn</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23<span>&deg;</span></p>
+                </li>
+                <li class="day">
+                    <p>Thu</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23<span>&deg;</span></p>
+                </li>
+                <li class="day">
+                    <p>Wed</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23<span>&deg;</span></p>
+                </li>
+                <li class="day">
+                    <p>Fr</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23<span>&deg;</span></p>
+                </li>
+                <li class="day">
+                    <p>Su</p>
+                    <img src="/snow.png" alt="" width="35" height="35">
+                    <p>23 <span>&deg;</span></p>
+                </li>
+            </ul>
+     -->
+        </div>
+    </main>
+
+    <footer>
+        <p class="created">&copy; 2025 Created by Olena Sorokina</p>
+    </footer>
+  </body>
+</html>
