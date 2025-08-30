@@ -147,8 +147,8 @@ function renderWeather(weatherData) {
     Mist: "bit-cloudy.png",
   };
    const iconSrc = iconMap[main]
-     ? `/icons/${iconMap[main]}`
-     : `/icons/default.png`;
+     ? `./icons/${iconMap[main]}`
+     : `./icons/default.png`;
 
   
    weather.innerHTML = "";
@@ -252,8 +252,8 @@ function renderOneCall(forecastData) {
         Mist: "bit-cloudy.png",
       };
       const iconSrc = iconMap[weatherMain]
-        ? `/icons/${iconMap[weatherMain]}`
-        : "/icons/default.png";
+        ? `./icons/${iconMap[weatherMain]}`
+        : "./icons/default.png";
       return `
       <li class="day">
         <p>${dayName}</p>
