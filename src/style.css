@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 body {
-  background: linear-gradient(180deg, rgba(53, 33, 99, 1) 0%, rgb(51, 25, 114, 0.5) 57.81%, rgb(51, 20, 60) 100%), url('./public/bgd.png') center bottom / cover no-repeat;
+  background: linear-gradient(180deg, rgba(53, 33, 99, 1) 0%, rgb(51, 25, 114, 0.5) 57.81%, rgb(51, 20, 60) 100%), url('../public/bgd.png') center bottom / cover no-repeat;
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;

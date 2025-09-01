@@ -204,8 +204,8 @@ async function getForecast(lat, lon) {
       appid: API_KEY,
     };
 
-    const respons = await axios.get(BASE_URL_ONECALL, { params });
-    const forecastData = respons.data;
+    const response = await axios.get(BASE_URL_ONECALL, { params });
+    const forecastData = response.data;
 
     renderOneCall(forecastData);
   } catch (error) {
