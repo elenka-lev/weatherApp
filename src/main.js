@@ -251,7 +251,7 @@ function renderOneCall(forecastData) {
       };
       const iconSrc = iconMap[weatherMain]
         ? `./icons/${iconMap[weatherMain]}`
-        : "./icons/default.png";
+        : "../public/icons/sunny.png";
       return `
       <li class="day">
         <p>${dayName}</p>
