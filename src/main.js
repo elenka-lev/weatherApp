@@ -236,20 +236,21 @@ function renderOneCall(forecastData) {
       const date = new Date(day.dt * 1000);
       const dayName = date.toLocaleDateString("en-US", { weekday: "short" });
       const temp = Math.round(day.main.temp);
-      const weatherMain = day.weather[0].main;
-
-      const iconMap = {
-        Clear: "sunny.png",
-        Clouds: "bit-cloudy.png",
-        Rain: "cloudy.png",
-        Drizzle: "rain.png",
-        Thunderstorm: "thunder.png",
-        Snow: "snow.png",
-        Mist: "bit-cloudy.png",
-      };
-      const iconSrc = iconMap[weatherMain]
-        ? `/icons/${iconMap[weatherMain]}`
-        : "/icons/sunny.png";
+      const icon = day.weather[0].icon;
+      // const weatherMain = day.weather[0].main;
+      const iconSrc = `${BASE_URL_OWM_ICONS}${icon}@2x.png`;
+      // const iconMap = {
+      //   Clear: "sunny.png",
+      //   Clouds: "bit-cloudy.png",
+      //   Rain: "cloudy.png",
+      //   Drizzle: "rain.png",
+      //   Thunderstorm: "thunder.png",
+      //   Snow: "snow.png",
+      //   Mist: "bit-cloudy.png",
+      // };
+      // const iconSrc = iconMap[weatherMain]
+      //   ? `/icons/${iconMap[weatherMain]}`
+      //   : "/icons/sunny.png";
       return `
       <li class="day">
         <p>${dayName}</p>
