@@ -146,7 +146,7 @@ function renderWeather(weatherData) {
   };
    const iconSrc = iconMap[main]
      ? `./icons/${iconMap[main]}`
-     : `./icons/sunny.png`;
+     : `../public/icons/sunny.png`;
 
   
    weather.innerHTML = "";
@@ -161,7 +161,7 @@ function renderWeather(weatherData) {
             <div class="wrapper">
                 <div class="description">
                     <img class="temp-img" src="${iconSrc}"
-                    onerror="this.src='/icons/sunny.png'"
+                    
                      alt=${description}>
                     <p class="temperature">${Math.round(
                       temp
