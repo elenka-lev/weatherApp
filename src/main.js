@@ -136,17 +136,17 @@ function renderWeather(weatherData) {
   const dateLoc = new Date(weatherData.dt * 1000).toLocaleDateString();
  
   const iconMap = {
-    Clear: new URL('/icons/sunny.png', import.meta.url).href,
-    Clouds: "bit-cloudy.png", 
-    Rain: "cloudy.png",
-    Drizzle: "rain.png",
-    Thunderstorm: "thunder.png",
-    Snow: "snow.png",
-    Mist: "bit-cloudy.png",
+    Clear: new URL("../public/icons/sunny.png", import.meta.url).href,
+    Clouds: new URL("/icons/bit-cloudy.png", import.meta.url).href,
+    Rain: new URL("/icons/cloudy.png", import.meta.url).href,
+    Drizzle: new URL("/icons/rain.png", import.meta.url).href,
+    Thunderstorm: new URL("/icons/thunder.png", import.meta.url).href,
+    Snow: new URL("/icons/snow.png", import.meta.url).href,
+    Mist: new URL("/icons/bit-cloudy.png", import.meta.url).href,
   };
    const iconSrc = iconMap[main]
-     ? `/icons/${iconMap[main]}`
-     : `/icons/bit-cloudy.png`;
+     ? iconMap[main]
+     : new URL("/icons/bit-cloudy.png", import.meta.url).href;
 
   
    weather.innerHTML = "";
