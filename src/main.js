@@ -146,7 +146,7 @@ function renderWeather(weatherData) {
   };
    const iconSrc = iconMap[main]
      ? `./icons/${iconMap[main]}`
-     : `../public/icons/sunny.png`;
+     : `../public/icons/bit-cloudy.png`;
 
   
    weather.innerHTML = "";
