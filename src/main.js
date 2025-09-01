@@ -1,15 +1,14 @@
-
+const BASE_URL_OWM_ICONS = "https://openweathermap.org/img/wn/";
 const API_KEY = "25564df1c8dad9938ea89a52e68a0135";
 const BASE_URL_GEO = "https://api.openweathermap.org/geo/1.0/direct";
 const BASE_URL_WEATHER = "https://api.openweathermap.org/data/2.5/weather";
 const BASE_URL_ONECALL = "https://api.openweathermap.org/data/2.5/forecast";
 
-
 const weather = document.querySelector(".container");
 const form = document.querySelector(".form");
 const geoBtn = document.querySelector(".location");
 
-  weather.innerHTML = `
+weather.innerHTML = `
 <div class="placeholder">
     <h1>Your Weather Companion</h1>
     <p class="descr-placeholder">Want to know the weather? Enter your city or allow geolocation and see the forecast for the next 5 days!</p>
@@ -35,11 +34,11 @@ form.addEventListener("submit", async (event) => {
       close: true,
       closeOnEscape: true,
       closeOnClick: true,
-    })
+    });
     return;
   }
   weather.innerHTML = "";
-  
+
   try {
     await getWeatherForCity(cityValue);
   } catch (error) {
@@ -80,22 +79,21 @@ geoBtn.addEventListener("click", () => {
   );
 });
 
-
 async function getCoordinates(cityValue) {
   try {
     const params = {
       appid: API_KEY,
       q: cityValue,
-      limit: 1
-    }
-    const respons = await axios.get(BASE_URL_GEO, { params })
+      limit: 1,
+    };
+    const respons = await axios.get(BASE_URL_GEO, { params });
     const { lat, lon } = respons.data[0];
     return { lat, lon };
   } catch (error) {
     console.log(error);
     throw error;
   }
-};
+}
 
 async function getWeather({ lat, lon }) {
   try {
@@ -105,51 +103,51 @@ async function getWeather({ lat, lon }) {
       units: "metric",
       appid: API_KEY,
     };
-   const respons = await axios.get(BASE_URL_WEATHER, {params});
+    const respons = await axios.get(BASE_URL_WEATHER, { params });
 
-   const weatherData = respons.data
-     return weatherData;
+    const weatherData = respons.data;
+    return weatherData;
   } catch (error) {
     console.log(error);
     throw error;
   }
- 
 }
 
 async function getWeatherForCity(cityValue) {
- try {
-   const coordinates = await getCoordinates(cityValue);
-   const weatherCity = await getWeather(coordinates);
+  try {
+    const coordinates = await getCoordinates(cityValue);
+    const weatherCity = await getWeather(coordinates);
 
     renderWeather(weatherCity);
- } catch (error) {
-   console.log(error);
-   throw error;
- }
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
 }
 
 function renderWeather(weatherData) {
   const { name } = weatherData;
   const { temp, pressure, humidity } = weatherData.main;
   const { speed } = weatherData.wind;
-  const { description, main } = weatherData.weather[0];
+  const { description, icon } = weatherData.weather[0];
   const dateLoc = new Date(weatherData.dt * 1000).toLocaleDateString();
- 
-  const iconMap = {
-    Clear: new URL("../public/icons/sunny.png", import.meta.url).href,
-    Clouds: new URL("/icons/bit-cloudy.png", import.meta.url).href,
-    Rain: new URL("/icons/cloudy.png", import.meta.url).href,
-    Drizzle: new URL("/icons/rain.png", import.meta.url).href,
-    Thunderstorm: new URL("/icons/thunder.png", import.meta.url).href,
-    Snow: new URL("/icons/snow.png", import.meta.url).href,
-    Mist: new URL("/icons/bit-cloudy.png", import.meta.url).href,
-  };
-   const iconSrc = iconMap[main]
-     ? iconMap[main]
-     : new URL("/icons/bit-cloudy.png", import.meta.url).href;
 
-  
-   weather.innerHTML = "";
+  const iconSrc = `${BASE_URL_OWM_ICONS}${icon}@2x.png`;
+
+  // const iconMap = {
+  //   Clear: new URL("../public/icons/sunny.png", import.meta.url).href,
+  //   Clouds: new URL("/icons/bit-cloudy.png", import.meta.url).href,
+  //   Rain: new URL("/icons/cloudy.png", import.meta.url).href,
+  //   Drizzle: new URL("/icons/rain.png", import.meta.url).href,
+  //   Thunderstorm: new URL("/icons/thunder.png", import.meta.url).href,
+  //   Snow: new URL("/icons/snow.png", import.meta.url).href,
+  //   Mist: new URL("/icons/bit-cloudy.png", import.meta.url).href,
+  // };
+  // const iconSrc = iconMap[main]
+  //   ? iconMap[main]
+  //   : new URL("/icons/bit-cloudy.png", import.meta.url).href;
+
+  weather.innerHTML = "";
   const markup = `
    
             <div class="city">
@@ -268,4 +266,3 @@ function renderOneCall(forecastData) {
 
   weather.appendChild(ul);
 }
-
