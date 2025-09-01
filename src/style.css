@@ -35,6 +35,9 @@ header {
   margin: 0 auto;
   
 }
+main {
+  height: calc(100dvh - 94px);
+}
 .form {
   position: relative;
   max-width: 280px;
@@ -81,6 +84,7 @@ header {
   border-radius: 50px;
 }
 .container, .placeholder {
+  
   max-width: 320px;
   margin: 0 auto;
   padding: 20px 10px 20px 10px;
@@ -212,6 +216,9 @@ footer {
     justify-content: start;
     margin: 0;
   }
+  main {
+    height: calc(100vh - 94px);
+  }
   .form {
     max-width: 350px;
 
@@ -263,6 +270,9 @@ footer {
       padding: 20px 20px 0 20px;
       justify-content: center;
       margin: 0 auto;
+  }
+  main {
+    height: calc(100vh - 120px);
   }
   .container {
     max-width: 768px;

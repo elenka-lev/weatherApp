@@ -134,19 +134,6 @@ function renderWeather(weatherData) {
 
   const iconSrc = `${BASE_URL_OWM_ICONS}${icon}@2x.png`;
 
-  // const iconMap = {
-  //   Clear: new URL("../public/icons/sunny.png", import.meta.url).href,
-  //   Clouds: new URL("/icons/bit-cloudy.png", import.meta.url).href,
-  //   Rain: new URL("/icons/cloudy.png", import.meta.url).href,
-  //   Drizzle: new URL("/icons/rain.png", import.meta.url).href,
-  //   Thunderstorm: new URL("/icons/thunder.png", import.meta.url).href,
-  //   Snow: new URL("/icons/snow.png", import.meta.url).href,
-  //   Mist: new URL("/icons/bit-cloudy.png", import.meta.url).href,
-  // };
-  // const iconSrc = iconMap[main]
-  //   ? iconMap[main]
-  //   : new URL("/icons/bit-cloudy.png", import.meta.url).href;
-
   weather.innerHTML = "";
   const markup = `
    
@@ -239,18 +226,7 @@ function renderOneCall(forecastData) {
       const icon = day.weather[0].icon;
       const weatherMain = day.weather[0].main;
       const iconSrc = `${BASE_URL_OWM_ICONS}${icon}@2x.png`;
-      // const iconMap = {
-      //   Clear: "sunny.png",
-      //   Clouds: "bit-cloudy.png",
-      //   Rain: "cloudy.png",
-      //   Drizzle: "rain.png",
-      //   Thunderstorm: "thunder.png",
-      //   Snow: "snow.png",
-      //   Mist: "bit-cloudy.png",
-      // };
-      // const iconSrc = iconMap[weatherMain]
-      //   ? `/icons/${iconMap[weatherMain]}`
-      //   : "/icons/sunny.png";
+      
       return `
       <li class="day">
         <p>${dayName}</p>
