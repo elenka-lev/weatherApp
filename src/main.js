@@ -172,17 +172,17 @@ function renderWeather(weatherData) {
                 </div>
             <ul class="grid">
                     <li class="grid-name">
-                        <img class="grid-img" src="/humidity.svg" alt="humidity" width="24" height="24">
+                        <img class="grid-img" src="./public/humidity.svg" alt="humidity" width="24" height="24">
                         <p class="value">${humidity}<span>%</span></p>
                         <p class="value-name">Humidity</p>
                     </li>
                     <li class="grid-name">
-                        <img class="grid-img" src="/pressure.svg" alt="pressure" width="24" height="24">
+                        <img class="grid-img" src="./public/pressure.svg" alt="pressure" width="24" height="24">
                         <p class="value">${pressure}<span>h/Pa</span></p>
                         <p class="value-name">Pressure</p>
                     </li>
                     <li class="grid-name">
-                        <img class="grid-img" src="/wind.svg" alt="pressure" width="24" height="24">
+                        <img class="grid-img" src="./public/wind.svg" alt="pressure" width="24" height="24">
                         <p class="value">${speed}<span>km/h</span></p>
                         <p class="value-name">Wind Speed</p>
                     </li>
