@@ -145,8 +145,8 @@ function renderWeather(weatherData) {
     Mist: "bit-cloudy.png",
   };
    const iconSrc = iconMap[main]
-     ? `../public/icons/${iconMap[main]}`
-     : `../public/icons/sunny.png`;
+     ? `/weatherApp/icons/${iconMap[main]}`
+     : `/weatherApp/icons/sunny.png`;
 
   
    weather.innerHTML = "";
@@ -250,8 +250,8 @@ function renderOneCall(forecastData) {
         Mist: "bit-cloudy.png",
       };
       const iconSrc = iconMap[weatherMain]
-        ? `./icons/${iconMap[weatherMain]}`
-        : "../public/icons/sunny.png";
+        ? `/weatherApp/icons/${iconMap[weatherMain]}`
+        : "/weatherApp/icons/sunny.png";
       return `
       <li class="day">
         <p>${dayName}</p>
