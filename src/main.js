@@ -237,7 +237,7 @@ function renderOneCall(forecastData) {
       const dayName = date.toLocaleDateString("en-US", { weekday: "short" });
       const temp = Math.round(day.main.temp);
       const icon = day.weather[0].icon;
-      // const weatherMain = day.weather[0].main;
+      const weatherMain = day.weather[0].main;
       const iconSrc = `${BASE_URL_OWM_ICONS}${icon}@2x.png`;
       // const iconMap = {
       //   Clear: "sunny.png",
@@ -255,6 +255,7 @@ function renderOneCall(forecastData) {
       <li class="day">
         <p>${dayName}</p>
         <img src="${iconSrc}" alt="${iconSrc}" width="35" height="35">
+        <p class="weather-main">${weatherMain}</p>
         <p>${temp}<span>&deg;</span></p>
       </li>
     `;
