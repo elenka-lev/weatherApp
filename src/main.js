@@ -145,8 +145,8 @@ function renderWeather(weatherData) {
     Mist: "bit-cloudy.png",
   };
    const iconSrc = iconMap[main]
-     ? `/weatherApp/icons/${iconMap[main]}`
-     : `/weatherApp/icons/sunny.png`;
+     ? `./icons/${iconMap[main]}`
+     : `./icons/sunny.png`;
 
   
    weather.innerHTML = "";
@@ -161,7 +161,7 @@ function renderWeather(weatherData) {
             <div class="wrapper">
                 <div class="description">
                     <img class="temp-img" src="${iconSrc}"
-                    onerror="this.src='/icons/default.png'"
+                    onerror="this.src='/icons/sunny.png'"
                      alt=${description}>
                     <p class="temperature">${Math.round(
                       temp
@@ -250,8 +250,8 @@ function renderOneCall(forecastData) {
         Mist: "bit-cloudy.png",
       };
       const iconSrc = iconMap[weatherMain]
-        ? `/weatherApp/icons/${iconMap[weatherMain]}`
-        : "/weatherApp/icons/sunny.png";
+        ? `./icons/${iconMap[weatherMain]}`
+        : "./icons/sunny.png";
       return `
       <li class="day">
         <p>${dayName}</p>
