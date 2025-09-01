@@ -1,5 +1,5 @@
 import axios from "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js";
-import iziToast from "izitoast";
+import iziToast from "https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js";
 import "izitoast/dist/css/iziToast.min.css";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
