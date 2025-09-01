@@ -146,8 +146,8 @@ function renderWeather(weatherData) {
     Mist: "bit-cloudy.png",
   };
    const iconSrc = iconMap[main]
-     ? `./icons/${iconMap[main]}`
-     : `./icons/default.png`;
+     ? `./public/icons/${iconMap[main]}`
+     : `./public/icons/sunny.png`;
 
   
    weather.innerHTML = "";
