@@ -136,7 +136,7 @@ function renderWeather(weatherData) {
   const dateLoc = new Date(weatherData.dt * 1000).toLocaleDateString();
  
   const iconMap = {
-    Clear: "sunny.png",
+    Clear: new URL('/icons/sunny.png', import.meta.url).href,
     Clouds: "bit-cloudy.png", 
     Rain: "cloudy.png",
     Drizzle: "rain.png",
