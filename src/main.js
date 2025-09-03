@@ -8,6 +8,16 @@ const weather = document.querySelector(".container");
 const form = document.querySelector(".form");
 const geoBtn = document.querySelector(".location");
 
+function saveWeather(data) {
+  localStorage.setItem("weatherData", JSON.stringify(data));
+}
+
+function loadWeather() {
+  const saved = localStorage.getItem("weatherData");
+  return saved ? JSON.parse(saved) : null;
+}
+
+
 weather.innerHTML = `
 <div class="placeholder">
     <h1>Your Weather Companion</h1>
@@ -174,6 +184,7 @@ function renderWeather(weatherData) {
               
   `;
   weather.insertAdjacentHTML("beforeend", markup);
+  saveWeather(weatherData);
   getForecast(weatherData.coord.lat, weatherData.coord.lon);
 }
 
@@ -243,3 +254,10 @@ function renderOneCall(forecastData) {
 
   weather.appendChild(ul);
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  const saved = loadWeather();
+  if (saved) {
+    renderWeather(saved);
+  }
+});
