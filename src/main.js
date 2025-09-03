@@ -30,7 +30,6 @@ form.addEventListener("submit", async (event) => {
       messageColor: "#fff",
       timeout: 5000,
       icon: "",
-      timeout: 5000,
       close: true,
       closeOnEscape: true,
       closeOnClick: true,
